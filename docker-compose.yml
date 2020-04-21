@@ -27,5 +27,5 @@ services:
     environment:
       - K6_OUT=influxdb=http://influxdb:8086/k6
       - CORTEZA_URL=${CORTEZA_URL}
-      - AUTH_JWT="${AUTH_JWT}"
+      - AUTH_JWT=${AUTH_JWT}
     command: "version"
