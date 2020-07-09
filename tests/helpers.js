@@ -7,7 +7,7 @@ const defaultParams = {
       Accept: "application/json, text/plain, */*",
       Authorization:
           `Bearer ${__ENV.AUTH_JWT}`,
-      'Content-Type': 'application/json',  
+      'Content-Type': 'application/json',
   }
 }
 
@@ -40,7 +40,7 @@ export function setupNamespace () {
 
   let res = makeRequest({
     method: 'post',
-    url: '/compose/namespace/',
+    url: 'compose/namespace/',
     body,
   }).json()
 
@@ -51,13 +51,13 @@ export function setupNamespace () {
 export function deleteNamespace(namespaceID = '') {
   makeRequest({
     method: 'delete',
-    url: `/compose/namespace/${namespaceID}`,
+    url: `compose/namespace/${namespaceID}`,
   })
 }
 
 export function makeRequest ({ method = 'get', url = '', body = '', params = defaultParams }) {
   let response
-  url = `${__ENV.CORTEZA_URL}/api${url}`
+  url = `${__ENV.CORTEZA_URL}/${url}`
 
   if (body) {
     body = JSON.stringify(body)

@@ -20,7 +20,7 @@ export function teardown({ namespaceID }) {
 export default function({ namespaceID }) {
   makeRequest({
     method: 'post',
-    url: '/system/auth/internal/login',
+    url: 'system/auth/internal/login',
     body: {
       email: 'test@mail.com',
       password: 'test'
@@ -28,63 +28,63 @@ export default function({ namespaceID }) {
   })
 
   makeRequest({
-    url: '/system/auth/check',
+    url: 'system/auth/check',
   })
 
   makeRequest({
-    url: '/system/application/',
+    url: 'system/application/',
   })
 
   makeRequest({
-    url: '/compose/settings/current',
+    url: 'compose/settings/current',
   })
 
   makeRequest({
-    url: '/compose/automation/',
+    url: 'compose/automation/',
   })
 
   makeRequest({
-    url: '/system/auth/check',
+    url: 'system/auth/check',
   })
 
   makeRequest({
-    url: '/compose/namespace/',
+    url: 'compose/namespace/',
   })
 
   makeRequest({
-    url: '/messaging/settings/current',
+    url: 'messaging/settings/current',
   })
 
   makeRequest({
-    url: `/compose/namespace/${namespaceID}/module/`,
+    url: `compose/namespace/${namespaceID}/module/`,
   })
 
   makeRequest({
-    url: `/compose/namespace/${namespaceID}/chart/`,
+    url: `compose/namespace/${namespaceID}/chart/`,
   })
 
   makeRequest({
-    url: `/compose/namespace/${namespaceID}/page/?sort=weight+AS`,
-  })
-  
-  makeRequest({
-    url: `/messaging/channels/`,
+    url: `compose/namespace/${namespaceID}/page/?sort=weight+AS`,
   })
 
   makeRequest({
-    url: `/messaging/commands/`,
+    url: `messaging/channels/`,
   })
 
   makeRequest({
-    url: `/messaging/permissions/effective`,
+    url: `messaging/commands/`,
   })
 
   makeRequest({
-    url: `/messaging/status/`,
+    url: `messaging/permissions/effective`,
   })
 
   makeRequest({
-    url: `/compose/namespace/${namespaceID}/page/tree`,
+    url: `messaging/status/`,
+  })
+
+  makeRequest({
+    url: `compose/namespace/${namespaceID}/page/tree`,
   })
 
   sleep(1)
